@@ -1,8 +1,6 @@
 import pandas as pd
 import json
 import warnings
-import requests
-from bs4 import BeautifulSoup
 from tqdm import tqdm
 
 from classes.competition import Competition
@@ -18,10 +16,6 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 # Competitions laden
 df_comp = pd.read_json("competitions_tm.json")
 
-df_comp_filter = df_comp[9:10]
-
-df_comp = df_comp_filter
-
 competitions = []
 for _, row in df_comp.iterrows():
     competition = Competition(
@@ -33,22 +27,12 @@ for _, row in df_comp.iterrows():
 
 # CompetitionScraper um Teams zu holen
 c_scraper = CompetitionScraper(competitions)
-#c_scraper.scrape_one(competitions[0])
 
 c_scraper.scrape_all()
-
-# Wir wollen ein flaches DataFrame:
-# Spalten: competition_name, competition_season, competition_url, competition_id,
-#          team_name, team_id, team_url,
-#          player_id, player_name, player_url, birthday, height,
-#          nationalities (JSON), main_position, side_positions (JSON), preferred_foot,
-#          social_media (JSON), market_value, market_value_history (JSON),
-#          current_club, in_team_since, contract_until, last_extension, player_agent, birth_place
 
 all_rows = []
 
 player_scraper = PlayerScraper()
-
 
 competition_progress = tqdm(competitions, desc="Competitions", unit="competition")
 
@@ -89,8 +73,6 @@ for comp in competition_progress:
                 p_obj.set_market_value(p_obj.market_value_history["mw"].iloc[-1])
             else:
                 p_obj.set_market_value(None)
-
-            #print(f"Scraped player {p_obj.name} ({p_obj.player_id})")
 
             # player_data holen
             player_data = player_to_dict(p_obj)

@@ -1,20 +1,21 @@
-import pandas as pd
 import json
 import warnings
+
+import pandas as pd
 from tqdm import tqdm
 
 from classes.competition import Competition
 from classes.competition_scraper import CompetitionScraper
-from classes.team import Team
-from classes.team_scraper import TeamScraper
 from classes.player import Player
 from classes.player_scraper import PlayerScraper
-from helpers import convert_to_serializable, extract_team_id, player_to_dict
+from classes.team import Team
+from classes.team_scraper import TeamScraper
+from helpers import extract_team_id, player_to_dict
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Competitions laden
-df_comp = pd.read_json("competitions_tm.json")
+df_comp = pd.read_json("competitions_tm_germany.json")
 
 competitions = []
 for _, row in df_comp.iterrows():

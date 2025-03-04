@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Bundesliga",
+    "url": "https://www.transfermarkt.de/bundesliga/startseite/wettbewerb/L1"
+  },
+  {
+    "name": "2. Bundesliga",
+    "url": "https://www.transfermarkt.de/2-bundesliga/startseite/wettbewerb/L2"
+  },
+  {
+    "name": "Premier League",
+    "url": "https://www.transfermarkt.de/premier-league/startseite/wettbewerb/GB1"
+  },
+  {
+    "name": "Championship",
+    "url": "https://www.transfermarkt.de/championship/startseite/wettbewerb/GB2"
+  },
+  {
+    "name": "Jupiler Pro League",
+    "url": "https://www.transfermarkt.de/jupiler-pro-league/startseite/wettbewerb/BE1"
+  },
+  {
+    "name": "Ligue 1",
+    "url": "https://www.transfermarkt.de/ligue-1/startseite/wettbewerb/FR1"
+  },
+  {
+    "name": "Serie A",
+    "url": "https://www.transfermarkt.de/serie-a/startseite/wettbewerb/IT1"
+  },
+  {
+    "name": "Eredivisie",
+    "url": "https://www.transfermarkt.de/eredivisie/startseite/wettbewerb/NL1"
+  },
+  {
+    "name": "Liga Portugal",
+    "url": "https://www.transfermarkt.de/liga-nos/startseite/wettbewerb/PO1"
+  },
+  {
+    "name": "La Liga",
+    "url": "https://www.transfermarkt.de/laliga/startseite/wettbewerb/ES1"
+  },
+  {
+    "name": "Super Lig",
+    "url": "https://www.transfermarkt.de/super-lig/startseite/wettbewerb/TR1"
+  }
+]

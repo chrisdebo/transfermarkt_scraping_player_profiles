@@ -36,11 +36,12 @@ def player_to_dict(player):
         "preferred_foot": player.preferred_foot,
         "social_media": player.social_media,
         "market_value": player.market_value,
-        "market_value_history": player.market_value_history.to_dict(orient='records') if player.market_value_history is not None else None,
+        "market_value_history": player.market_value_history.to_dict(orient='records') if hasattr(player.market_value_history, 'to_dict') else player.market_value_history,
         "current_club": player.current_club,
         "in_team_since": player.in_team_since,
         "contract_until": player.contract_until,
         "last_extension": player.last_extension,
         "player_agent": player.player_agent,
-        "birth_place": player.birth_place
+        "birth_place": player.birth_place,
+        "performance_data": player.performance_data
     }

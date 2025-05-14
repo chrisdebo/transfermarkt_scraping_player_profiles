@@ -18,7 +18,7 @@ class Player:
         self.last_extension = ""
         self.player_agent = ""
         self.birth_place = ""
-
+        self.performance_data = []
 
     # Setter methods to populate attributes
     def set_name(self, name):
@@ -59,6 +59,9 @@ class Player:
     def set_birth_place(self, birth_place):
         self.birth_place = birth_place
 
+    def set_performance_data(self, performance_data):
+        self.performance_data = performance_data
+
     def player_to_dict(self):
         return {
             "player_id": self.player_id,
@@ -78,7 +81,8 @@ class Player:
             "contract_until": self.contract_until,
             "last_extension": self.last_extension,
             "player_agent": self.player_agent,
-            "birth_place": self.birth_place
+            "birth_place": self.birth_place,
+            "performance_data": self.performance_data
         }
 
     def __str__(self):
@@ -89,4 +93,4 @@ class Player:
                 f"Height: {self.height}, Birthday: {self.birthday}, "
                 f"Preferred Foot: {self.preferred_foot}, Player Agent: {self.player_agent}, "
                 f"Contract Until: {self.contract_until}, Last Extension: {self.last_extension} "
-                f"Market Value History: {self.market_value_history}")
+                f"Market Value History: {self.market_value_history}, Performance Data: {self.performance_data}")
